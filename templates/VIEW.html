@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> ಕನ್ನಡ ನಿಘಂಟು </title>
+</head>
+
+<body>
+    <h1 style="text-align: center">ಕನ್ನಡ ನಿಘಂಟು </h1>
+    <div class="table">
+        {% block body %}
+        {{ data|safe }}
+        {% endblock %}  
+      </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ಇತರೆ</title>
+</head>
+
+<body>
+        <h1 style="text-align: center"> <a href="http://localhost:5000/home" style="text-decoration: none">ಕನ್ನಡ ನಿಘಂಟು </a></h1>
+    
+    <form method="POST" action="http://localhost:5000/result3">
+        
+        {{ form.hidden_tag()}}
+
+        <fieldset class="form-group">
+
+            <legend class="border bottom mb-4">ಇತರೆ</legend>
+            
+            <div class="form-group">
+                {{ form.Other_word.label(class_="form-control-label",required='required')    }}
+                {{ form.Other_word(class="form-control form-control-lg ",required='required')    }}
+            </div>
+
+            <br>
+
+            
+
+            
+            <div class="form-group">
+                    {{ form.Other_categories.label(class="form-control form-control-lg ")    }}
+                    <select name='Other_categories' method="POST" action="/">
+                        {% for Other_category in Other_categories %}
+                        <option value= "{{Other_category}}" SELECTED>{{Other_category}}</option>"
+                        {% endfor %}
+                    </select>
+            </div>
+
+            
+
+        </fieldset>
+
+        <div class="form-group">
+            {{  form.submit(class='btn btn-outline-info') }}
+            <input type="button" onclick=window.location.href='{{ url_for('home')}}' name="ಮುಖಪುಟ" value="ಮುಖಪುಟ">  
+    </div>
+
+
+
+    </form>
+
+    
+</body>
+
+</html>

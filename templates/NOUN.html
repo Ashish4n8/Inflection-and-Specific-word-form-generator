@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ನಾಮಪದ</title>
+</head>
+
+<body>
+        <h1 style="text-align: center"> <a href="http://localhost:5000/home" style="text-decoration: none">ಕನ್ನಡ ನಿಘಂಟು</a></h1>
+    
+    <form method="POST" action="http://localhost:5000/result1">
+        
+        {{ form.hidden_tag()}}
+
+        <fieldset class="form-group">
+
+            <legend class="border bottom mb-4">ನಾಮಪದ</legend>
+            
+            <div class="form-group">
+                {{ form.Noun_word.label(class_="form-control-label",required='required')}}
+                {{ form.Noun_word(class="form-control form-control-lg ",required='required')    }}
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                    {{ form.Genders.label(class="form-control form-control-lg ")    }}
+                    <select name='Genders' method="POST" action="/">
+                        {% for Gender in Genders %}
+                        <option value= "{{Gender}}" SELECTED>{{Gender}}</option>"
+                        {% endfor %}
+                    </select>
+            </div>
+
+            <br>
+
+            
+            <div class="form-group">
+                    {{ form.Noun_categories.label(class="form-control form-control-lg ")    }}
+                    <select name='Noun_categories' method="POST" action="/">
+                        {% for Noun_category in Noun_categories %}
+                        <option value= "{{Noun_category}}" SELECTED>{{Noun_category}}</option>"
+                        {% endfor %}
+                    </select>
+            </div>
+
+            
+
+        </fieldset>
+
+        <div class="form-group">
+            {{  form.submit() }}
+            <input type="button" onclick=window.location.href='{{ url_for('home')}}' name="ಮುಖಪುಟ" value="ಮುಖಪುಟ">
+        </div>
+
+
+
+    </form>
+
+    
+    
+</body>
+
+</html>
